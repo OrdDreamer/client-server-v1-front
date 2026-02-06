@@ -158,8 +158,22 @@
       });
   }
 
+  var BACKEND_OUTPUT_IDS = ["out-root", "out-health", "out-items", "out-item", "out-post", "out-delete"];
+
+  function clearBackendResponses() {
+    BACKEND_OUTPUT_IDS.forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) {
+        el.textContent = "—";
+        el.className = "api-output";
+      }
+    });
+  }
+
+  document.getElementById("clearBackendResponses").addEventListener("click", clearBackendResponses);
+
   // Backend buttons
-  document.querySelectorAll(".api-btn").forEach(function (btn) {
+  document.querySelectorAll(".api-btn[data-action]").forEach(function (btn) {
     btn.addEventListener("click", function () {
       var action = btn.getAttribute("data-action");
       if (action === "get-root") handleGetRoot();

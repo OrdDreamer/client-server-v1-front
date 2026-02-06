@@ -125,6 +125,10 @@ button:hover {
   margin-top: 0.25rem;
 }
 
+.clear-responses-btn {
+  margin-top: 0.75rem;
+}
+
 .endpoint-block {
   margin-bottom: 1rem;
   flex-shrink: 0;
