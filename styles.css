@@ -110,6 +110,18 @@ button:hover {
   color: #444;
 }
 
+.backend-link {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: #0066cc;
+  margin-bottom: 0.75rem;
+  text-decoration: none;
+}
+
+.backend-link:hover {
+  text-decoration: underline;
+}
+
 .backend-controls {
   margin-bottom: 0.75rem;
   flex-shrink: 0;
