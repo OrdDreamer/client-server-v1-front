@@ -33,7 +33,8 @@
     ></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    <section class="half">
+    <!-- 1. Form -->
+    <section class="pane pane-form">
       <h2>Відправка події в аналітику</h2>
       <form id="eventForm">
         <div class="form-row">
@@ -48,10 +49,61 @@
       </form>
     </section>
 
-    <section class="half">
+    <!-- 2. dataLayer output -->
+    <section class="pane pane-datalayer">
       <h2>dataLayer</h2>
       <button type="button" class="refresh-btn" id="refreshDataLayer">Оновити</button>
       <pre id="dataLayerOutput">Натисніть «Оновити», щоб показати вміст dataLayer</pre>
+    </section>
+
+    <!-- 3. Backend -->
+    <section class="pane pane-backend">
+      <h2>Backend API</h2>
+      <div class="backend-controls">
+        <label class="backend-label">user_id (опційно)</label>
+        <input type="text" id="backendUserId" placeholder="для аналітики" class="backend-input" />
+      </div>
+
+      <div class="endpoint-block">
+        <h3>GET /</h3>
+        <button type="button" class="api-btn" data-action="get-root">Запит</button>
+        <pre class="api-output" id="out-root">—</pre>
+      </div>
+
+      <div class="endpoint-block">
+        <h3>GET /health</h3>
+        <button type="button" class="api-btn" data-action="get-health">Запит</button>
+        <pre class="api-output" id="out-health">—</pre>
+      </div>
+
+      <div class="endpoint-block">
+        <h3>GET /items</h3>
+        <button type="button" class="api-btn" data-action="get-items">Запит</button>
+        <pre class="api-output" id="out-items">—</pre>
+      </div>
+
+      <div class="endpoint-block">
+        <h3>GET /items/{item_id}</h3>
+        <input type="number" id="getItemId" placeholder="item_id" class="api-input" min="1" />
+        <button type="button" class="api-btn" data-action="get-item">Запит</button>
+        <pre class="api-output" id="out-item">—</pre>
+      </div>
+
+      <div class="endpoint-block">
+        <h3>POST /items</h3>
+        <input type="text" id="postName" placeholder="name" class="api-input" />
+        <input type="text" id="postDescription" placeholder="description (опційно)" class="api-input" />
+        <input type="number" id="postPrice" placeholder="price" class="api-input" step="any" />
+        <button type="button" class="api-btn" data-action="post-item">Створити</button>
+        <pre class="api-output" id="out-post">—</pre>
+      </div>
+
+      <div class="endpoint-block">
+        <h3>DELETE /items/{item_id}</h3>
+        <input type="number" id="deleteItemId" placeholder="item_id" class="api-input" min="1" />
+        <button type="button" class="api-btn" data-action="delete-item">Видалити</button>
+        <pre class="api-output" id="out-delete">—</pre>
+      </div>
     </section>
 
     <script src="script.js"></script>

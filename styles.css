@@ -2,23 +2,33 @@
   box-sizing: border-box;
 }
 
-body {
+html, body {
   margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
   font-family: system-ui, -apple-system, sans-serif;
   font-size: 14px;
   color: #333;
-  display: flex;
-  min-height: 100vh;
 }
 
-.half {
-  flex: 1;
+body {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.pane {
   min-width: 0;
-  padding: 1.5rem 2rem;
+  min-height: 0;
+  padding: 1rem 1.25rem;
   border-right: 1px solid #e0e0e0;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
 }
 
-.half:last-of-type {
+.pane:last-of-type {
   border-right: none;
 }
 
@@ -27,8 +37,10 @@ h2 {
   font-size: 1rem;
   font-weight: 600;
   color: #666;
+  flex-shrink: 0;
 }
 
+/* Form */
 .form-row {
   margin-bottom: 0.75rem;
 }
@@ -43,7 +55,7 @@ input,
 textarea,
 button {
   width: 100%;
-  max-width: 400px;
+  max-width: 320px;
   padding: 0.5rem 0.75rem;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -69,6 +81,7 @@ button:hover {
   background: #555;
 }
 
+/* dataLayer */
 #dataLayerOutput {
   background: #f8f8f8;
   border: 1px solid #e0e0e0;
@@ -79,8 +92,75 @@ button:hover {
   font-size: 12px;
   white-space: pre-wrap;
   word-break: break-all;
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
 }
 
 .refresh-btn {
   margin-bottom: 0.75rem;
+  flex-shrink: 0;
+}
+
+/* Backend */
+.pane-backend h3 {
+  margin: 0.75rem 0 0.25rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #444;
+}
+
+.backend-controls {
+  margin-bottom: 0.75rem;
+  flex-shrink: 0;
+}
+
+.backend-label,
+.backend-input {
+  display: block;
+}
+
+.backend-input {
+  max-width: 200px;
+  margin-top: 0.25rem;
+}
+
+.endpoint-block {
+  margin-bottom: 1rem;
+  flex-shrink: 0;
+}
+
+.api-input {
+  display: block;
+  max-width: 240px;
+  margin-bottom: 0.35rem;
+}
+
+.api-btn {
+  margin-right: 0.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.api-output {
+  background: #f0f4f8;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 0.75rem;
+  margin: 0.35rem 0 0;
+  font-family: monospace;
+  font-size: 11px;
+  white-space: pre-wrap;
+  word-break: break-all;
+  max-height: 180px;
+  overflow: auto;
+}
+
+.api-output.error {
+  background: #fff0f0;
+  border-color: #e0a0a0;
+}
+
+.api-output.success {
+  background: #f0fff0;
+  border-color: #a0c0a0;
 }
