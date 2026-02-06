@@ -1,0 +1,86 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  color: #333;
+  display: flex;
+  min-height: 100vh;
+}
+
+.half {
+  flex: 1;
+  min-width: 0;
+  padding: 1.5rem 2rem;
+  border-right: 1px solid #e0e0e0;
+}
+
+.half:last-of-type {
+  border-right: none;
+}
+
+h2 {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #666;
+}
+
+.form-row {
+  margin-bottom: 0.75rem;
+}
+
+.form-row label {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: #555;
+}
+
+input,
+textarea,
+button {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+textarea {
+  min-height: 80px;
+  resize: vertical;
+  font-family: monospace;
+}
+
+button {
+  max-width: 120px;
+  cursor: pointer;
+  background: #333;
+  color: #fff;
+  border: none;
+  margin-top: 0.5rem;
+}
+
+button:hover {
+  background: #555;
+}
+
+#dataLayerOutput {
+  background: #f8f8f8;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 1rem;
+  min-height: 120px;
+  font-family: monospace;
+  font-size: 12px;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.refresh-btn {
+  margin-bottom: 0.75rem;
+}

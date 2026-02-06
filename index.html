@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Client-Server Analytics V1</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-5MGKCP6T");
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-5MGKCP6T"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <section class="half">
+      <h2>Відправка події в аналітику</h2>
+      <form id="eventForm">
+        <div class="form-row">
+          <label for="eventName">Назва події</label>
+          <input type="text" id="eventName" name="eventName" placeholder="наприклад: button_click" required />
+        </div>
+        <div class="form-row">
+          <label for="eventData">Дані події (JSON, необовʼязково)</label>
+          <textarea id="eventData" name="eventData" placeholder='{"category": "engagement", "action": "click"}'></textarea>
+        </div>
+        <button type="submit">Відправити</button>
+      </form>
+    </section>
+
+    <section class="half">
+      <h2>dataLayer</h2>
+      <button type="button" class="refresh-btn" id="refreshDataLayer">Оновити</button>
+      <pre id="dataLayerOutput">Натисніть «Оновити», щоб показати вміст dataLayer</pre>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
