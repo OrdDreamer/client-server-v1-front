@@ -39,7 +39,7 @@
       <form id="eventForm">
         <div class="form-row">
           <label for="eventName">Назва події</label>
-          <input type="text" id="eventName" name="eventName" placeholder="наприклад: button_click" required />
+          <input type="text" id="eventName" name="eventName" placeholder="наприклад: button_click" required value="test_event"/>
         </div>
         <div class="form-row">
           <label for="eventData">Дані події (JSON, необовʼязково)</label>
@@ -47,6 +47,16 @@
         </div>
         <button type="submit">Відправити</button>
       </form>
+      <div class="typical-events">
+        <span class="typical-events-label">Типові події:</span>
+        <button type="button" class="typical-event-btn" data-event="page_view" data-payload='{}'>page_view</button>
+        <button type="button" class="typical-event-btn" data-event="button_click" data-payload='{"action": "click"}'>button_click</button>
+        <button type="button" class="typical-event-btn" data-event="form_submit" data-payload='{"form_id": "eventForm"}'>form_submit</button>
+        <button type="button" class="typical-event-btn" data-event="scroll" data-payload='{"depth": 90}'>scroll</button>
+        <button type="button" class="typical-event-btn" data-event="link_click" data-payload='{"outbound": false}'>link_click</button>
+        <button type="button" class="typical-event-btn" data-event="add_to_cart" data-payload='{"item_id": "", "value": 0}'>add_to_cart</button>
+        <button type="button" class="typical-event-btn" data-event="purchase" data-payload='{"transaction_id": "", "value": 0}'>purchase</button>
+      </div>
     </section>
 
     <!-- 2. dataLayer output -->

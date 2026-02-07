@@ -237,4 +237,19 @@
   });
 
   refreshBtn.addEventListener("click", updateDataLayerView);
+
+  // Типові події — клік відправляє подію в dataLayer
+  document.querySelectorAll(".typical-event-btn").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var eventName = btn.getAttribute("data-event");
+      var payloadStr = btn.getAttribute("data-payload");
+      var eventData = null;
+      if (payloadStr) {
+        try {
+          eventData = JSON.parse(payloadStr);
+        } catch (e) {}
+      }
+      pushEvent(eventName, eventData);
+    });
+  });
 })();
